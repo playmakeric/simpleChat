@@ -1,0 +1,41 @@
+package edu.seg2105.edu.server.ui;
+
+import java.io.IOException;
+import java.util.Scanner;
+;
+import java.io.*;
+
+public class ServerConsole implements ChatIF {
+	EchoServer server;
+
+	public ServerConsole(int port) {
+		// TODO Auto-generated constructor stub
+		try 
+	    {
+	      server= new EchoServer(port);
+	      
+	      
+	    } 
+	    catch(IOException exception) 
+	    {
+	      System.out.println("Error: Can't setup connection!"
+	                + " Terminating client.");
+	      System.exit(1);
+	    }
+	    
+	    // Create scanner object to read from console
+	    fromConsole = new Scanner(System.in); 
+	}
+
+	@Override
+	public void display(String message) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

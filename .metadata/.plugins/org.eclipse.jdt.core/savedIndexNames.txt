@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+C:\Users\ibrah\Documents\School\Fall_2024\SEG-2105\assignements\A2\SC\.metadata\.plugins\org.eclipse.jdt.core
+2568234942.index
+482907002.index
+2219000855.index
+1865797976.index

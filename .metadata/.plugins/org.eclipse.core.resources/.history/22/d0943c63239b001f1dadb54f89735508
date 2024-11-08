@@ -1,0 +1,79 @@
+package edu.seg2105.edu.server.ui;
+
+import java.io.*;
+import java.util.Scanner;
+
+import edu.seg2105.client.common.ChatIF;
+import edu.seg2105.edu.server.backend.EchoServer;
+
+
+
+public class ServerConsole implements ChatIF {
+	EchoServer server;
+	Scanner fromConsole;
+
+	public ServerConsole(int port) {
+		// TODO Auto-generated constructor stub
+		try 
+	    {
+	      server= new EchoServer(port);
+	      
+	      
+	    } 
+	    catch(IOException exception) 
+	    {
+	      System.out.println("Error: Can't setup connection!"
+	                + " Terminating client.");
+	      System.exit(1);
+	    }
+	    
+	    // Create scanner object to read from console
+	    fromConsole = new Scanner(System.in); 
+	}
+	
+	
+	 //Instance methods ************************************************
+	  
+	  /**
+	   * This method waits for input from the console.  Once it is 
+	   * received, it sends it to the client's message handler.
+	   */
+	  public void accept() 
+	  {
+	    try
+	    {
+
+	      String message;
+
+	      while (true) 
+	      {
+	        message = fromConsole.nextLine();
+	        client.handleMessageFromClientUI(message);
+	      }
+	    } 
+	    catch (Exception ex) 
+	    {
+	      System.out.println
+	        ("Unexpected error while reading from console!");
+	    }
+	  }
+
+	  /**
+	   * This method overrides the method in the ChatIF interface.  It
+	   * displays a message onto the screen.
+	   *
+	   * @param message The string to be displayed.
+	   */
+	  
+	@Override
+	public void display(String message) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,22 @@
+package edu.seg2105.edu.server.ui;
+
+import edu.seg2105.client.common.ChatIF;
+
+public class ServerConsole implements ChatIF {
+
+	public ServerConsole() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void display(String message) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
